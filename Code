@@ -1,0 +1,33 @@
+Basic Chatbot
+
+
+# Simple chatbot implementation in Python
+
+def chatbot_response(user_input):
+    responses = {
+        "hello": "Hi there! How can I help you today?",
+        "how are you": "I'm just a bot, but I'm doing great! How about you?",
+        "what is your name": "I'm a chatbot created by OpenAI. You can call me ChatBot!",
+        "bye": "Goodbye! Have a great day!",
+
+    }
+    
+    # Convert user input to lowercase to make matching case-insensitive
+    user_input = user_input.lower()
+    
+    # Return the appropriate response if it exists, otherwise return a default message
+    return responses.get(user_input, "I'm sorry, I don't understand that.")
+
+def main():
+    print("Welcome to the simple chatbot! Type 'bye' to exit.")
+    
+    while True:
+        user_input = input("You: ")
+        if user_input.lower() == 'bye':
+            print("ChatBot: Goodbye! Have a great day!")
+            break
+        response = chatbot_response(user_input)
+        print("ChatBot:", response)
+
+if __name__ == "__main__":
+    main()
